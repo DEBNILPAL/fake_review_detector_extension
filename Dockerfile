@@ -17,7 +17,7 @@ WORKDIR /app
 # Node
 COPY backend/package*.json ./backend/
 # Python
-COPY "deep learning/requirements.txt" "./deep learning/requirements.txt"
+COPY ["deep learning/requirements.txt", "deep learning/requirements.txt"]
 
 # Install dependencies
 RUN cd backend && npm ci --omit=dev \
@@ -25,7 +25,7 @@ RUN cd backend && npm ci --omit=dev \
 
 # Copy source code
 COPY backend ./backend
-COPY "deep learning" "./deep learning"
+COPY ["deep learning", "deep learning"]
 
 # Environment
 ENV NODE_ENV=production \
