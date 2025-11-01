@@ -1,0 +1,66 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python-version
+.venv/
+venv/
+.env
+.env.*
+
+# IDE / OS
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Build / Dist
+build/
+dist/
+coverage/
+.next/
+.out/
+
+# Logs
+logs/
+*.log
+
+# Chrome extension packaged output (if any)
+*.crx
+*.zip
+
+# Model/data artifacts not required for deployment
+# CSV datasets
+*.csv
+*.CSV
+**/data/**
+
+# GloVe and other embedding files
+# Common patterns: glove.6B.zip, glove.6B.300d.txt, .vec/.bin embeddings
+*glove*.zip
+*glove*.txt
+*glove*.vec
+*glove*.bin
+*glove*.emb
+
+# Large ML artifacts (keep if you really need them; comment out as necessary)
+*.h5
+*.pt
+*.pth
+*.joblib
+*.keras
+
+# Cache
+.pytest_cache/
+.mypy_cache/
+.cache/

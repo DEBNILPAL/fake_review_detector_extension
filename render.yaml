@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: fake-review-backend
+    env: docker
+    plan: free
+    rootDir: .
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    healthCheckPath: /api/diagnostics
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8000
+      # Use one of the following DB configs
+      # Option A: Managed Postgres on Render (recommended)
+      # - key: DATABASE_URL
+      #   fromDatabase: 
+      #     name: fake-review-db
+      #     property: connectionString
+      # Option B: Manual connection fields (if not using DATABASE_URL)
+      # - key: DB_USER
+      #   value: postgres
+      # - key: DB_PASSWORD
+      #   sync: false
+      # - key: DB_HOST
+      #   value: your-db-host
+      # - key: DB_PORT
+      #   value: 5432
+      # - key: DB_NAME
+      #   value: Fake_Review_Detector
+      - key: PGSSL
+        value: "true"
+      - key: PYTHON_PATH
+        value: /usr/local/bin/python
+    autoScale:
+      minInstances: 1
+      maxInstances: 1
