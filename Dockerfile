@@ -20,7 +20,7 @@ COPY backend/package*.json ./backend/
 COPY ["deep learning/requirements.txt", "deep learning/requirements.txt"]
 
 # Install dependencies
-RUN cd backend && npm ci --omit=dev \
+RUN cd backend && npm install --omit=dev \
  && cd "/app/deep learning" && pip3 install --no-cache-dir -r requirements.txt
 
 # Copy source code
